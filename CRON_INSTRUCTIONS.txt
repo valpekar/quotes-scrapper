@@ -1,0 +1,17 @@
+To schedule the quote scraper to run twice daily using cron, follow these steps:
+
+1. Open your terminal.
+2. Edit your crontab by running:
+   crontab -e
+3. Add the following line to the crontab to run the scraper at 6:00 AM and 6:00 PM every day:
+
+0 6,18 * * * /Users/valeriyapekar/Work/py/quotes-scrapper/run_scraper.sh >> /Users/valeriyapekar/Work/py/quotes-scrapper/cron.log 2>&1
+
+- This will run the scraper and append output to cron.log in your project folder.
+- Make sure the script is executable (chmod +x run_scraper.sh).
+- Adjust the path if your project is in a different location.
+
+To check your current crontab entries, run:
+   crontab -l
+
+To remove the job, edit the crontab again and delete the line. 
